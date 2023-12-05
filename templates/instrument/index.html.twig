@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InstrumentController!{% endblock %}
+
+
+{% block body %}
+<section class="pt-80px pb-30px">
+<div class="container">
+
+<h3>Our newest offers</h3>
+<div class="d-flex flex-row  flex-wrap justify-content-around ">
+    {% for instrument in instruments %}
+   
+  
+    
+   
+    
+    
+<div class="card m-2" style="width: 18rem;">
+  <div class="card-body">
+  <div class="justify-content-between d-flex">
+    <a class="card-title font-weight-bold" href="{{url("details",{"id": instrument.id})}}">{{ instrument.name }}</a>
+        <p class="badge badge-primary badge-pill align-self-center">{{ instrument.price }}</p>
+   </div>
+    <p class="card-text">{{ instrument.description }}</p>
+    <p  class="card-text">{{ instrument.postedAt|date("m/d/Y") }}</p>
+  </div>
+  
+</div>
+
+
+
+{% endfor %}
+</div>
+</div>
+
+</section>
+{% endblock %}

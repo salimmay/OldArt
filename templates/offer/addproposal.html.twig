@@ -1,0 +1,59 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="question-area pt-80px pb-40px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-item">
+{{ form_start(proposal_form, {"attr": {"class": "card-body"}}) }}
+
+
+    <div class="form-group">
+     <div class="input-box">
+                            {{ form_label(proposal_form.price) }}
+                            <div class="form-group">
+                                 {{ form_widget(proposal_form.price) }}
+                            </div>
+                            
+                           
+                            
+                </div>
+             <div class="input-box">
+                            {{ form_label(proposal_form.contact  ) }}
+                            {{ form_help(proposal_form.contact) }}
+                           <div class="form-group">
+                                 {{ form_widget(proposal_form.contact) }}
+                            </div>
+                            
+                </div><!-- end input-box -->
+                <div class="input-box">
+                
+                            {{ form_label(proposal_form.description) }}
+                            {{ form_help(proposal_form.description) }}
+                           <div class="form-group">
+                                 {{ form_widget(proposal_form.description) }}
+                            </div>
+                            
+                </div><!-- end input-box -->
+               <!-- end input-box -->
+
+                        <div class="form-group">
+                            <button id="send-message-btn" class="btn theme-btn w-100" type="submit">
+                                submit
+                                <i class="la la-arrow-right icon ml-1"></i>
+                            </button>
+                        </div>
+    </div>
+
+{{form_end(proposal_form)}}
+
+ </div><!-- end card -->
+            </div><!-- end col-lg-8 -->
+        
+        
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end question-area -->
+{% endblock %}
